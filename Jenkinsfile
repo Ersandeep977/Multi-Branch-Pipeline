@@ -4,32 +4,25 @@ pipeline
     agent any
     stages
     {
-        stage('ContinuousDownload')
+        stage('ContinuousDownload-Loan')
         {
             steps
             {
                 git 'https://github.com/Ersandeep977/DevOps-Maven-code.git'
             }
         }
-        stage('ContinuousBuild')
+        stage('ContinuousBuild-Loan')
         {
             steps
             {
                 sh 'mvn package'
             }
         }
-        stage('ContinuousDeployment')
+        stage('ContinuousDeployment-Loan')
         {
             steps
             {
              echo "Deployment don for the block"   
-            }
-        }
-        stage('ContinuousTesting')
-        {
-            steps
-            {
-               git 'https://github.com/Ersandeep977/DevOps-FunctionTesting-code.git'
             }
         }
        
