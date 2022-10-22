@@ -1,3 +1,4 @@
+/* This Pipeline code are create the some pipeline  */
 pipeline
 {
     agent any
@@ -21,15 +22,14 @@ pipeline
         {
             steps
             {
-                deploy adapters: [tomcat9(credentialsId: 'b6a3e172-533b-4d1a-9da0-10d82c1bc003', path: '', url: 'http://18.117.250.171:8080')], contextPath: 'test3', war: '**/*.war'
-               }
+             echo "Deployment don for the block"   
+            }
         }
         stage('ContinuousTesting')
         {
             steps
             {
-               git 'https://github.com/Ersandeep977/FunctionalTesting.git'
-               sh 'java -jar /var/lib/jenkins/workspace/Pipeline-6/testing.jar'
+               git 'https://github.com/Ersandeep977/DevOps-FunctionTesting-code.git'
             }
         }
        
