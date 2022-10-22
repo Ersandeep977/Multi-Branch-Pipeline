@@ -25,6 +25,12 @@ pipeline
              echo "Deployment don for the block"   
             }
         }
-       
+       stage('Date-Print-Loan')
+        {
+            steps
+            {
+             sh 'date'   
+            }
+        }
     }    
 }
